@@ -1,5 +1,7 @@
 package EJERCICIO2;
 
-public class TipoEvento {
+public enum TipoEvento {
+    REGULAR,
+    VIP
     
 }

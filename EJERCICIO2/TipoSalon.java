@@ -1,5 +1,8 @@
 package EJERCICIO2;
 
-public class TipoSalon {
+public enum TipoSalon {
+    PEQUENO,
+    MEDIANO,
+    GRANDE
     
 }
