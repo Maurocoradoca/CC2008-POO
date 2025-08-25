@@ -1,5 +1,7 @@
 package EJERCICIO2;
-
+ //No se implementaron setters para los arreglos ni para los índices
+ //porque en el diseño final el propio modelo controla su manejo interno.
+ //Incluirlos sería redundante y podría romper la consistencia del sistema.
 public class CentroEventos {
 
     private Salon[] salones;

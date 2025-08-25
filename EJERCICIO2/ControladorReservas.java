@@ -1,4 +1,7 @@
 package EJERCICIO2;
+//No se implementaron getters y setters de modelo o vista porque
+//el flujo de ejecución no requiere exponer esas referencias. Se mantienen
+//encapsuladas para respetar MVC y evitar acceso innecesario.
 
 public class ControladorReservas {
     

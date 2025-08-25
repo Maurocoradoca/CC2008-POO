@@ -1,5 +1,9 @@
 package EJERCICIO2;
 
+
+// Maurcio Corado 25218
+// 25/08/2025  
+
 import java.util.Scanner;
 
 public class Main {
