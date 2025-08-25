@@ -10,7 +10,6 @@ public class Main {
         Vista vista = new Vista();
         Scanner sc = new Scanner(System.in);
 
-        // Precarga de 4 salones (según tu análisis)
         ctrl.agregarSalon(101, TipoSalon.PEQUENO, 30, 150);
         ctrl.agregarSalon(201, TipoSalon.MEDIANO, 60, 300);
         ctrl.agregarSalon(202, TipoSalon.MEDIANO, 80, 350);

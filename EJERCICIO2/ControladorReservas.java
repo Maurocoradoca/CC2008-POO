@@ -25,7 +25,7 @@ public class ControladorReservas {
         return modelo.moverDeEspera();
     }
 
-    // ---- Listados ----
+
     public String listarReservas() {
         return modelo.listarReservas();
     }
