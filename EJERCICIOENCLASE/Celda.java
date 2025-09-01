@@ -33,4 +33,16 @@ public class Celda {
             return this.tieneBarco ? "X" : "O";
         }
     }
+
+    public String cheat() {
+        if(this.disparada && this.tieneBarco) {
+            return "X";
+        } else if (this.tieneBarco) {
+            return "S";
+        } else if (this.disparada) {
+            return "O";
+        } else {
+            return ".";
+        }
+    }
 }

@@ -37,7 +37,19 @@ public class Tablero {
     }
 
     public void colocarBarcos(int cantidad, Random rnd) {
+        int colocados = 0;
 
+        while(colocados < cantidad) {
+            int i = rnd.nextInt(this.n);
+            int j = rnd.nextInt(this.n);
+
+            if (!this.celdas[i][j].TieneBarco()) {
+                this.celdas[i][j].setTieneBarco();
+                colocados++;
+            }
+        }
+
+        this.barcosTotales = cantidad;
     }
     
     public boolean disparar(int i, int j) {
@@ -50,11 +62,22 @@ public class Tablero {
     }
 
     public int barcosHundidos() {
+        int hits = 0;
 
+        for(int i = 0; i < this.n; i++) {
+            for(int j = 0; j < this.n; j++) {
+                Celda c = this.getCelda(i, j);
+
+                if(c.TieneBarco() && c.estaDisparada()) {
+                    hits++;
+                }
+            }
+        }
+        return hits;
     }
 
     public boolean todosHundidos() {
-
+        return this.barcosHundidos() == this.barcosTotales;
     }
 
 
