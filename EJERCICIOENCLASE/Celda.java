@@ -22,10 +22,11 @@ public class Celda {
         return tieneBarco;
     }
 
-    public void setTieneBarco(){
+    public void setTieneBarco() {
         this.tieneBarco = true;
     }
-    
+
+    @Override
     public String toString() {
         if (!this.disparada) {
             return ".";
@@ -35,10 +36,10 @@ public class Celda {
     }
 
     public String cheat() {
-        if(this.disparada && this.tieneBarco) {
+        if (this.disparada && this.tieneBarco) {
             return "X";
         } else if (this.tieneBarco) {
-            return "S";
+            return "S"; 
         } else if (this.disparada) {
             return "O";
         } else {

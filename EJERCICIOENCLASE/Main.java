@@ -6,5 +6,5 @@ public class Main {
         Battleship game = new Battleship(5, 3, 10);
         game.jugar();
     }
-    
 }
+
