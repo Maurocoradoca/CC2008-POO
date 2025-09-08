@@ -8,13 +8,15 @@ public class SimbolosJuego {
     private final Random random;
 
     public SimbolosJuego() {
-        this.random = new Random();
-        this.catalogo = new ArrayList<>();
-        Collections.addAll(catalogo,
-                "🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼",
-                "🐨","🐯","🦁","🐮","🐷","🐸","🐵","🐤",
-                "🍎","🍌","🍒","🍇","🍉","🍍","🥝","🥕"
-        );
+            this.random = new Random();
+            catalogo = new ArrayList<>();
+            Collections.addAll(catalogo,
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+                "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+                "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+                "@", "#", "$", "%", "&", "*", "+", "-", "=", "?", "!", "^",
+                "☺", "☻", "♥", "♦", "♣", "♠", "★", "☆", "☼", "☽", "☾", "♛", "♚"
+            );// no me funcionaron correctamnte los anteriores simbolos por eso los cambie
     }
 
     public List<String> pick(int k) {
