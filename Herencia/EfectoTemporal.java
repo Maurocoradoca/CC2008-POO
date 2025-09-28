@@ -14,9 +14,17 @@ public class EfectoTemporal {
     }
     
     // Getters
-    public Efecto getTipo() { return tipo; }
-    public int getTurnos() { return turnos; }
-    public int getMagnitud() { return magnitud; }
+    public Efecto getTipo() { 
+        return tipo; 
+    }
+    
+    public int getTurnos() { 
+        return turnos; 
+    }
+    
+    public int getMagnitud() { 
+        return magnitud; 
+    }
     
     public boolean haExpirado() {
         return turnos <= 0;

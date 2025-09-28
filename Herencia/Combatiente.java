@@ -19,7 +19,18 @@ public abstract class Combatiente {
     }
     
     public void recibirDaño(int d) {
-        hp -= d;
+        int daño = d;
+        
+        // Aplicar reducción por escudo
+        for (EfectoTemporal efecto : efectos) {
+            if (efecto.getTipo() == Efecto.ESCUDO) {
+                daño -= efecto.getMagnitud();
+                if (daño < 0) daño = 0;
+                break;
+            }
+        }
+        
+        hp -= daño;
         if (hp <= 0) {
             hp = 0;
             vivo = false;
@@ -41,15 +52,10 @@ public abstract class Combatiente {
         List<EfectoTemporal> efectosARemover = new ArrayList<>();
         
         for (EfectoTemporal efecto : efectos) {
-            // Aplicar el efecto según su tipo
             switch (efecto.getTipo()) {
                 case VENENO:
                     recibirDaño(efecto.getMagnitud());
                     break;
-                case ESCUDO:
-                    // El escudo reduce el daño recibido
-                    break;
-                // Otros efectos se pueden implementar aquí
             }
             
             efecto.tick();
@@ -58,7 +64,6 @@ public abstract class Combatiente {
             }
         }
         
-        // Remover efectos expirados
         efectos.removeAll(efectosARemover);
     }
     
@@ -66,18 +71,29 @@ public abstract class Combatiente {
         efectos.add(efecto);
     }
     
-    // Método abstracto que deben implementar las subclases
+    // Método abstracto
     public abstract void tomarTurno(Batalla ctx);
     
-    // Getters básicos
+    // Método para atacar
+    public void atacar(Combatiente objetivo) {
+        int daño = this.atk;
+        
+        // Aplicar bonus de ataque
+        for (EfectoTemporal efecto : this.efectos) {
+            if (efecto.getTipo() == Efecto.ATAQUE_PLUS) {
+                daño += efecto.getMagnitud();
+            }
+        }
+        
+        objetivo.recibirDaño(daño);
+    }
+    
+    // Getters
     public String getNombre() { return nombre; }
     public int getHp() { return hp; }
     public int getHpMax() { return hpMax; }
     public int getAtk() { return atk; }
     public List<EfectoTemporal> getEfectos() { return efectos; }
-    
-    // Setter para ataque
-    public void setAtk(int atk) { this.atk = atk; }
     
     @Override
     public String toString() {
