@@ -1,8 +1,9 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=".repeat(60));
-        System.out.println("    BIENVENIDO AL SIMULADOR DE BATALLA RPG");
-        System.out.println("=".repeat(60));
+        System.out.println("BIENVENIDO" );
         
         Vista vista = new Vista();
         Batalla batalla = new Batalla();
@@ -88,7 +89,6 @@ public class Main {
         }
         
         vista.mostrarMensaje("\nGracias por jugar");
-        vista.mostrarMensaje("Presiona Enter para salir");
         vista.pausar();
         
         System.exit(0);

@@ -1,15 +1,12 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
 
 public class Batalla {
     private List<Jugador> jugadores;
     private List<Enemigo> enemigos;
     private RegistroAcciones log;
     private Random rnd;
-    private Map<Combatiente, List<EfectoTemporal>> buffs;
     private int turnoActual;
     private List<Combatiente> ordenTurnos;
     
@@ -18,7 +15,6 @@ public class Batalla {
         this.enemigos = new ArrayList<>();
         this.log = new RegistroAcciones();
         this.rnd = new Random();
-        this.buffs = new HashMap<>();
         this.turnoActual = 0;
         this.ordenTurnos = new ArrayList<>();
     }

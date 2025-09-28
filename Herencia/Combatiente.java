@@ -49,22 +49,45 @@ public abstract class Combatiente {
     }
     
     public void aplicarEfectos() {
-        List<EfectoTemporal> efectosARemover = new ArrayList<>();
-        
-        for (EfectoTemporal efecto : efectos) {
-            switch (efecto.getTipo()) {
-                case VENENO:
-                    recibirDaño(efecto.getMagnitud());
-                    break;
-            }
-            
-            efecto.tick();
-            if (efecto.haExpirado()) {
-                efectosARemover.add(efecto);
-            }
+    List<EfectoTemporal> efectosARemover = new ArrayList<>();
+    
+    for (EfectoTemporal efecto : efectos) {
+        switch (efecto.getTipo()) {
+            case VENENO:
+                int dañoVeneno = efecto.getMagnitud();
+                recibirDaño(dañoVeneno);
+                System.out.println(nombre + " sufre " + dañoVeneno + " de daño por veneno.");
+                break;
+            case ESCUDO:
+                if (efecto.getTurnos() == 1) {
+                    System.out.println("El escudo de " + nombre + " está a punto de expirar.");
+                }
+                break;
+            case ATAQUE_PLUS:
+                if (efecto.getTurnos() == 1) {
+                    System.out.println("El boost de ataque de " + nombre + " está a punto de expirar.");
+                }
+                break;
+            case ACELERACION:
+                if (efecto.getTurnos() == 1) {
+                    System.out.println("La aceleración de " + nombre + " está a punto de expirar.");
+                }
+                break;
+            case EVASION:
+                if (efecto.getTurnos() == 1) {
+                    System.out.println("La evasión de " + nombre + " está a punto de expirar.");
+                }
+                break;
         }
         
-        efectos.removeAll(efectosARemover);
+        efecto.tick();
+        if (efecto.haExpirado()) {
+            efectosARemover.add(efecto);
+            System.out.println("El efecto " + efecto.getTipo() + " ha expirado para " + nombre + ".");
+        }
+    }
+    
+    efectos.removeAll(efectosARemover);
     }
     
     public void agregarEfecto(EfectoTemporal efecto) {

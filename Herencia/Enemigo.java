@@ -16,10 +16,9 @@ public abstract class Enemigo extends Combatiente {
     
     @Override
     public void tomarTurno(Batalla ctx) {
+    Acciones accion = (random.nextDouble() < 0.7) ? Acciones.ATACAR : Acciones.HABILIDAD_ESPECIAL;
     
-        Acciones accion = (random.nextDouble() < 0.7) ? Acciones.ATACAR : Acciones.HABILIDAD_ESPECIAL;
-        
-        Combatiente objetivo = ctx.getJugadorAleatorio();
+    Combatiente objetivo = ctx.getJugadorAleatorio();
         if (objetivo != null) {
             switch (accion) {
                 case ATACAR:
@@ -28,7 +27,18 @@ public abstract class Enemigo extends Combatiente {
                 case HABILIDAD_ESPECIAL:
                     usarHabilidadEspecial(objetivo, ctx);
                     break;
+                case USAR_ITEM:
+                    ctx.registrarAccion(this.getNombre() + " pasó su turno.");
+                    break;
+                case PASAR_TURNO:
+                    ctx.registrarAccion(this.getNombre() + " pasó su turno.");
+                    break;
+                case SALIR:
+                    ctx.registrarAccion(this.getNombre() + " pasó su turno.");
+                    break;
             }
+        } else {
+            ctx.registrarAccion(this.getNombre() + " pasó su turno (no hay objetivos).");
         }
     }
     

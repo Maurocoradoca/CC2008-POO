@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Vista {
     private Scanner scanner;
@@ -14,7 +15,7 @@ public class Vista {
         }
         
         System.out.println("\nTURNO DE " + c.getNombre().toUpperCase());
-        System.out.println("¿Qué deseas hacer?");
+        System.out.println("¿Que quieres hacer?");
         System.out.println("1. Atacar");
         System.out.println("2. Usar item");
         System.out.println("3. Pasar turno");
