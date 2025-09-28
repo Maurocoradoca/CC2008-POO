@@ -18,7 +18,6 @@ class PocionVida extends Item {
     }
 }
 
-// BoostAtaque.java
 class BoostAtaque extends Item {
     private int plus;
     
@@ -39,7 +38,6 @@ class BoostAtaque extends Item {
     }
 }
 
-// FlechaEnvenenada.java
 class FlechaEnvenenada extends Item {
     
     public FlechaEnvenenada(int usos) {
@@ -60,7 +58,6 @@ class FlechaEnvenenada extends Item {
     }
 }
 
-// BengalaCegadora.java
 class BengalaCegadora extends Item {
     
     public BengalaCegadora(int usos) {
@@ -79,7 +76,6 @@ class BengalaCegadora extends Item {
     }
 }
 
-// EscudoPortatil.java
 class EscudoPortatil extends Item {
     
     public EscudoPortatil(int usos) {
@@ -98,7 +94,6 @@ class EscudoPortatil extends Item {
     }
 }
 
-// TonicoVigor.java
 class TonicoVigor extends Item {
     
     public TonicoVigor(int usos) {
@@ -117,7 +112,6 @@ class TonicoVigor extends Item {
     }
 }
 
-// BombaHumo.java
 class BombaHumo extends Item {
     
     public BombaHumo(int usos) {
@@ -137,7 +131,6 @@ class BombaHumo extends Item {
     }
 }
 
-// Trampa.java
 class Trampa extends Item {
     
     public Trampa(int usos) {
