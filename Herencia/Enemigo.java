@@ -16,16 +16,18 @@ public abstract class Enemigo extends Combatiente {
     
     @Override
     public void tomarTurno(Batalla ctx) {
-        // 70% atacar, 30% habilidad especial
-        if (random.nextDouble() < 0.7) {
-            Combatiente objetivo = ctx.getJugadorAleatorio();
-            if (objetivo != null) {
-                atacarEnemigo(objetivo, ctx);
-            }
-        } else {
-            Combatiente objetivo = ctx.getJugadorAleatorio();
-            if (objetivo != null) {
-                usarHabilidadEspecial(objetivo, ctx);
+    
+        Acciones accion = (random.nextDouble() < 0.7) ? Acciones.ATACAR : Acciones.HABILIDAD_ESPECIAL;
+        
+        Combatiente objetivo = ctx.getJugadorAleatorio();
+        if (objetivo != null) {
+            switch (accion) {
+                case ATACAR:
+                    atacarEnemigo(objetivo, ctx);
+                    break;
+                case HABILIDAD_ESPECIAL:
+                    usarHabilidadEspecial(objetivo, ctx);
+                    break;
             }
         }
     }
