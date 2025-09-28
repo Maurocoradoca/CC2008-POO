@@ -1,16 +1,34 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
+
 public class RegistroAcciones {
-    private final String[] cola = new String[3];
-    private int idx = 0;
-    public void push(String msg){ 
-        cola[idx % cola.length] = msg; idx++;
+    private String[] cola;
+    private int idx;
+    
+    public RegistroAcciones() {
+        this.cola = new String[3];
+        this.idx = 0;
+        for (int i = 0; i < 3; i++) {
+            cola[i] = "";
+        }
     }
-    public java.util.List<String> ultimas(){
-        java.util.List<String> out = new ArrayList<>();
-        int start = Math.max(0, idx - cola.length);
-        for(int i=start;i<idx;i++){
-             String s=cola[i%cola.length]; if(s!=null) out.add(s);
+    
+    public void push(String msg) {
+        cola[idx] = msg;
+        idx = (idx + 1) % 3;
+    }
+    
+    public List<String> ultimas() {
+        List<String> ultimas = new ArrayList<>();
+        
+        // Empezar desde la posición más antigua
+        for (int i = 0; i < 3; i++) {
+            int pos = (idx + i) % 3;
+            if (cola[pos] != null && !cola[pos].isEmpty()) {
+                ultimas.add(cola[pos]);
             }
-        return out;
+        }
+        
+        return ultimas;
     }
 }
