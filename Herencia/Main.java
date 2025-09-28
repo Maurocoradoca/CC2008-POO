@@ -1,3 +1,6 @@
+//Mauricio Corado 
+//28.09.2025
+//Este programa simula un juego de rol con jugadores y enemigos.
 import java.util.List;
 import java.util.ArrayList;
 
