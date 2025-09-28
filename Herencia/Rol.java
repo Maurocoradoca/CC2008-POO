@@ -1,3 +1,4 @@
-public class Rol {
-    
+public enum Rol {
+    GUERRERO,
+    EXPLORADOR
 }
