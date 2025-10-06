@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Planificador que gestiona todos los procesos
- 
+
 public class Planificador {
     private List<Proceso> procesos;
     
@@ -10,29 +10,45 @@ public class Planificador {
         this.procesos = new ArrayList<>();
     }
     
-    // Sobrecarga de métodos
+    // Sobrecarga de métodos 
     public void agregarProceso(Proceso proceso) {
-        if (proceso != null) {
+        if (proceso != null && !procesos.contains(proceso)) {
             procesos.add(proceso);
         }
     }
     
     public void agregarProceso(List<Proceso> procesos) {
         if (procesos != null) {
-            this.procesos.addAll(procesos);
+            for (Proceso p : procesos) {
+                agregarProceso(p); // Reutilizar el método con validación
+            }
         }
     }
     
     public List<Proceso> getProcesos() {
-        return new ArrayList<>(procesos); // Retorna copia para proteger encapsulación
+        return new ArrayList<>(procesos);
+    }
+    
+    public List<Proceso> getProcesosActivos() {
+        List<Proceso> activos = new ArrayList<>();
+        for (Proceso p : procesos) {
+            if (p.isActivo()) {
+                activos.add(p);
+            }
+        }
+        return activos;
     }
     
     // Ejecución polimórfica de todos los procesos
     public void ejecutarProcesos() {
-        System.out.println("=== EJECUTANDO " + procesos.size() + " PROCESOS ===");
-        for (Proceso p : procesos) {
+        for (Proceso p : getProcesosActivos()) {
             p.ejecutar(); // Polimorfismo: se ejecuta el método específico de cada tipo
-            System.out.println("---");
+        }
+    }
+    
+    public void ejecutarProcesos(int ciclos) {
+        for (int i = 0; i < ciclos; i++) {
+            ejecutarProcesos();
         }
     }
     
@@ -48,17 +64,29 @@ public class Planificador {
     public boolean eliminarProceso(int pid) {
         Proceso proceso = buscarProcesoPorPid(pid);
         if (proceso != null) {
+            proceso.detener(); // Detener antes de eliminar
             procesos.remove(proceso);
             return true;
         }
         return false;
     }
     
+    public void detenerTodos() {
+        for (Proceso p : procesos) {
+            p.detener();
+        }
+    }
+    
     public int contarProcesos() {
         return procesos.size();
     }
     
+    public int contarProcesosActivos() {
+        return getProcesosActivos().size();
+    }
+    
     public void limpiarProcesos() {
+        detenerTodos();
         procesos.clear();
     }
 }
