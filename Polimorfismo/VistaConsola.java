@@ -1,8 +1,5 @@
 import java.util.List;
 
-/**
- * Vista para interactuar con la consola
- */
 public class VistaConsola {
     
     public void mostrarMensaje(String msg) {
@@ -11,10 +8,6 @@ public class VistaConsola {
     
     public void mostrarError(String msg) {
         System.out.println("ERROR: " + msg);
-    }
-    
-    public void mostrarExito(String msg) {
-        System.out.println(msg);
     }
     
     public void mostrarOperacionProceso() {
@@ -27,7 +20,7 @@ public class VistaConsola {
             return;
         }
         
-        System.out.println(" LISTA DE PROCESOS (" + lista.size() + ")");
+        System.out.println("LISTA DE PROCESOS (" + lista.size() + ")");
         for (int i = 0; i < lista.size(); i++) {
             System.out.println((i + 1) + ". " + lista.get(i));
         }
@@ -44,22 +37,21 @@ public class VistaConsola {
     public void mostrarEjecucionProceso(Proceso proceso) {
         System.out.println("Ejecutando: " + proceso.getNombre() + " (PID: " + proceso.getPid() + ")");
         
-        // Mostrar comportamiento específico según el tipo de proceso
         if (proceso instanceof ProcesoCPU) {
             ProcesoCPU cpu = (ProcesoCPU) proceso;
-            System.out.println(" Uso de CPU: " + cpu.getUsoCPU() + "%");
-            System.out.println(" Optimizado: " + (cpu.isOptimizado() ? "Sí" : "No"));
-            System.out.println(" Realizando cálculos intensivos");
+            System.out.println("Uso de CPU: " + cpu.getUsoCPU() + "%");
+            System.out.println("Optimizado: " + (cpu.isOptimizado() ? "Sí" : "No"));
+            System.out.println("Realizando cálculos intensivos");
         } else if (proceso instanceof ProcesoIO) {
             ProcesoIO io = (ProcesoIO) proceso;
-            System.out.println("  Dispositivo: " + io.getDispositivo());
-            System.out.println("  Esperando IO: " + (io.isEsperandoIO() ? "Sí" : "No"));
-            System.out.println("  Realizando operaciones de entrada/salida");
+            System.out.println("Dispositivo: " + io.getDispositivo());
+            System.out.println("Esperando IO: " + (io.isEsperandoIO() ? "Sí" : "No"));
+            System.out.println("Realizando operaciones de entrada/salida");
         } else if (proceso instanceof Daemon) {
             Daemon daemon = (Daemon) proceso;
-            System.out.println(" Servicio: " + daemon.getServicio());
-            System.out.println(" jecuciones: " + daemon.getContadorEjecuciones());
-            System.out.println(" Ejecutando en segundo plano...");
+            System.out.println("Servicio: " + daemon.getServicio());
+            System.out.println("Ejecuciones: " + daemon.getContadorEjecuciones());
+            System.out.println("Ejecutando en segundo plano");
         }
         System.out.println("---");
     }
@@ -78,5 +70,67 @@ public class VistaConsola {
         System.out.println("Procesos IO: " + ios);
         System.out.println("Daemons: " + daemons);
         System.out.println("Total: " + planificador.contarProcesos());
+    }
+    
+    public void mostrarSeparador() {
+        System.out.println("\n" + "=".repeat(50));
+    }
+    
+    public void mostrarTitulo(String titulo) {
+        System.out.println(titulo);
+    }
+    
+    public void mostrarInicioSimulacion() {
+        mostrarSeparador();
+        System.out.println("INICIANDO SIMULADOR DE SISTEMA OPERATIVO");
+        mostrarSeparador();
+    }
+    
+    public void mostrarFinSimulacion() {
+        mostrarSeparador();
+        System.out.println("SIMULACIÓN COMPLETADA EXITOSAMENTE");
+        mostrarSeparador();
+    }
+    
+    public void mostrarProcesosCreados() {
+        mostrarMensaje("Procesos de prueba creados exitosamente");
+    }
+    
+    public void mostrarEjecucionCiclos(int ciclos) {
+        mostrarMensaje("Ejecutando todos los procesos por " + ciclos + " ciclos...");
+    }
+    
+    public void mostrarCicloActual(int ciclo) {
+        System.out.println("CICLO " + ciclo );
+    }
+    
+    public void mostrarDemostracionEliminacion() {
+        mostrarTitulo("DEMOSTRACIÓN ELIMINACIÓN");
+    }
+    
+    public void mostrarDemostracionFuncionalidades() {
+        mostrarTitulo("DEMOSTRACIÓN FUNCIONALIDADES ESPECÍFICAS");
+    }
+    
+    public void mostrarOptimizacionCPU(double antes, double despues) {
+        mostrarMensaje("Antes de optimizar: " + antes + "%");
+        mostrarMensaje("Después de optimizar: " + despues + "%");
+    }
+    
+    public void mostrarReinicioDaemon(int antes, int despues) {
+        mostrarMensaje("Ejecuciones del daemon antes: " + antes);
+        mostrarMensaje("Ejecuciones del daemon después: " + despues);
+    }
+    
+    public void mostrarIntentoEliminacion(int pid) {
+        mostrarMensaje("Intentando eliminar proceso PID: " + pid);
+    }
+    
+    public void mostrarResultadoEliminacion(boolean eliminado, int pid) {
+        if (eliminado) {
+            mostrarMensaje("Proceso con PID " + pid + " eliminado exitosamente");
+        } else {
+            mostrarError("No se encontró proceso con PID " + pid);
+        }
     }
 }

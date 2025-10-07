@@ -37,6 +37,6 @@ public class ProcesoIO extends Proceso {
     
     @Override
     public String toString() {
-        return super.toString() + " [E/S, dispositivo=" + dispositivo + ", esperando=" + esperandoIO + "]";
+        return super.toString() + " [IO, dispositivo=" + dispositivo + ", esperando=" + esperandoIO + "]";
     }
 }
