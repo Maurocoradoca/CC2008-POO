@@ -1,3 +1,6 @@
+// Clase Hospital manager 
+// Actua como coordinador principal entre los gestores de personal y de citas
+
 import java.util.List;
 import java.util.Map;
 
@@ -127,7 +130,7 @@ public class HospitalManager {
     public List<Medico> buscarPersonalDisponible(Class<? extends Medico> tipoClase) {
         return gestorPersonal.buscarPorEspecializacion(tipoClase);
     }
-    
+
     public boolean resolverConflicto(String idCita) {
         CitaMedica cita = gestorCitas.buscarCita(idCita);
         return gestorCitas.reagendarAutomatico(cita);

@@ -1,3 +1,6 @@
+// Clase gestor personal 
+// Administra el conjunto de medicos registrados en el hospital 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

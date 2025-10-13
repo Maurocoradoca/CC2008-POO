@@ -1,3 +1,6 @@
+// Clase Enfermero 
+// Subclase de medico que modela a los enfermeros del hospital
+
 public class Enfermero extends Medico {
     private String turno; // "DIURNO" o "NOCTURNO"
     private String nivelCertificacion; // "BASICO", "INTERMEDIO", "AVANZADO"

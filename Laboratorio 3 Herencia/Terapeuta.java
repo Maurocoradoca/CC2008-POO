@@ -1,3 +1,6 @@
+// Clase Terapeuta 
+// Subclase de medico que representa a los terapeutas del hospital 
+
 public class Terapeuta extends Medico {
     private String tipoTerapia; // "FÍSICA", "OCUPACIONAL", "RESPIRATORIA", "PSICOLÓGICA"
     private int duracionSesion; // Duración promedio en minutos

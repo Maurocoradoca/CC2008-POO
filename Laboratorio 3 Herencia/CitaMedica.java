@@ -1,3 +1,6 @@
+// Clase cita medica 
+// Cita medica programada en el sistema, asociada a paciente 
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

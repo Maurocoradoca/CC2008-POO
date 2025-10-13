@@ -1,3 +1,6 @@
+// Clase Historial Reagendamiento
+// Almacena los cambios de fecha y motivo de reagendamiento de una cita medica
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 

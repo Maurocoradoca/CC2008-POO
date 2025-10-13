@@ -1,3 +1,6 @@
+// Clase Farmaceutico 
+// Subclase de medico que gestiona las prescripciones medicas del hospital
+
 public class Farmaceutico extends Medico {
     private int limitePrescripciones;
     private boolean licenciaSustancias;

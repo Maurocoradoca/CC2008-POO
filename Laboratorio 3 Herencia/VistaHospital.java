@@ -1,3 +1,6 @@
+// Clase Vista hospital 
+// Maneja toda la interaccion con el usuario mediante consola 
+
 import java.util.Scanner;
 
 public class VistaHospital {
@@ -8,14 +11,14 @@ public class VistaHospital {
     }
 
     public int menu() {
-        System.out.println("              SISTEMA INTEGRAL DE GESTIÓN HOSPITALARIA                        ");
-        System.out.println("\n GESTIÓN DE PERSONAL");
+        System.out.println("              SISTEMA INTEGRAL DE GESTION HOSPITALARIA                        ");
+        System.out.println("\n GESTION DE PERSONAL");
         System.out.println("1. Contratar nuevo personal médico ");
         System.out.println("2. Buscar personal por departamento ");
         System.out.println("3. Buscar médico por ID ");
         System.out.println("4. Listar todo el personal ");
         System.out.println("5. Registrar actividad médica ");
-        System.out.println("\n GESTIÓN DE CITAS");
+        System.out.println("\n GESTION DE CITAS");
         System.out.println("6. Programar nueva cita médica ");
         System.out.println("7. Buscar cita por ID ");
         System.out.println("8. Listar citas por estado ");
@@ -35,7 +38,7 @@ public class VistaHospital {
     }
 
     public int menuContratarPersonal() {
-        System.out.println("\n CONTRATAR PERSONAL MÉDICO");
+        System.out.println("\n CONTRATAR PERSONAL MEDICO");
         System.out.println("1. Doctor General ");
         System.out.println("2. Cirujano ");
         System.out.println("3. Enfermero ");

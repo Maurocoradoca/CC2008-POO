@@ -1,3 +1,7 @@
+// Clase Cirujano 
+// Subclase de medico encargada de representar a los cirujanos del hospital 
+
+
 import java.util.ArrayList;
 import java.util.List;
 

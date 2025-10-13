@@ -1,3 +1,6 @@
+// Clase Radiologo 
+// Subclase de medico que representa a los especialisata en radiologia
+
 import java.util.ArrayList;
 import java.util.List;
 

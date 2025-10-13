@@ -1,3 +1,6 @@
+//Clase abstracta medico 
+// Representa el modelo base de todo trabajador medico del hospital
+
 public abstract class Medico {
     // Atributos protegidos para acceso desde clases hijas
     protected String idEmpleado;

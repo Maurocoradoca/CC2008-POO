@@ -1,3 +1,6 @@
+// Clase gestor cita
+// Gestiona todas las operaciones relacionadas con las citas medicas del hospital 
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

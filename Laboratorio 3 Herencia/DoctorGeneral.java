@@ -1,3 +1,7 @@
+//Clase Doctor general
+//Subclase de medicio que representa a los doctores generales del hospital
+
+
 public class DoctorGeneral extends Medico {
     private double tarifaConsulta;
     private int consultasAtendidas;
