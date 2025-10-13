@@ -65,6 +65,6 @@ public class Farmaceutico extends Medico {
     public String toString() {
         return String.format("FARMACÉUTICO - %s | Prescripciones: %d/%d | Licencia Especial: %s | Salario Total: Q%.2f",
                 super.toString(), prescripcionesRealizadas, limitePrescripciones, 
-                (licenciaSustancias ? "Sí" : "No"), calcularSalario());
+                (licenciaSustancias ? "Si" : "No"), calcularSalario());
     }
 }

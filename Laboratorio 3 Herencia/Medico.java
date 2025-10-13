@@ -47,7 +47,7 @@ public abstract class Medico {
         return Experiencia;
     }
 
-    public void setAniosExperiencia(int aniosExperiencia) {
+    public void setAniosExperiencia(int Experiencia) {
         this.Experiencia = Experiencia;
     }
 

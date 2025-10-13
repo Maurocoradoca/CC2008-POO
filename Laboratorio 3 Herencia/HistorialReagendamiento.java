@@ -40,7 +40,7 @@ public class HistorialReagendamiento {
 
     @Override
     public String toString() {
-        return String.format("Cambio: %s → %s | Motivo: %s",
+        return String.format("Cambio: %s = %s | Motivo: %s",
                 fechaAnterior.format(FORMATO),
                 nuevaFecha.format(FORMATO),
                 motivo);
