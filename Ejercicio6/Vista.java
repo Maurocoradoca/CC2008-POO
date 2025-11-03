@@ -13,7 +13,7 @@ public class Vista {
     }
     
     public void mostrarMenuPrincipal() {
-        System.out.println("SISTEMA DE GESTIÓN DE EQUIPOS AGRO-TECNOLÓGICOS");
+        System.out.println("SISTEMA DE GESTION DE EQUIPOS AGRO-TECNOLOGICOS");
         System.out.println("1. Listar todos los equipos");
         System.out.println("2. Buscar equipo por ID");
         System.out.println("3. Buscar equipo por nombre");
@@ -42,7 +42,7 @@ public class Vista {
     
     //Muestra la información detallada de un equipo
     public void mostrarDetalleEquipo(Equipo equipo) {
-        System.out.println("INFORMACIÓN DETALLADA DEL EQUIPO");
+        System.out.println("INFORMACION DETALLADA DEL EQUIPO");
         System.out.println(equipo.mostrarInformacion());
     }
     

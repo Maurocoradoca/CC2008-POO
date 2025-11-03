@@ -35,7 +35,7 @@ public class EstacionPluviometrica extends Equipo implements Medible, Registrabl
     @Override
     public String mostrarInformacion() {
         StringBuilder info = new StringBuilder();
-        info.append("=== ESTACIÓN PLUVIOMÉTRICA ===\n");
+        info.append("=== ESTACION PLUVIOMÉTRICA ===\n");
         info.append("ID: ").append(id).append("\n");
         info.append("Nombre: ").append(nombre).append("\n");
         info.append("Fabricante: ").append(fabricante).append("\n");

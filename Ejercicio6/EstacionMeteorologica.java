@@ -35,7 +35,7 @@ public class EstacionMeteorologica extends Equipo implements Medible, Registrabl
     @Override
     public String mostrarInformacion() {
         StringBuilder info = new StringBuilder();
-        info.append("=== ESTACIÓN METEOROLÓGICA ===\n");
+        info.append("=== ESTACION METEOROLÓGICA ===\n");
         info.append("ID: ").append(id).append("\n");
         info.append("Nombre: ").append(nombre).append("\n");
         info.append("Fabricante: ").append(fabricante).append("\n");

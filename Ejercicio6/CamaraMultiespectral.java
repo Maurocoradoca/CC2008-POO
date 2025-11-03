@@ -35,7 +35,7 @@ public class CamaraMultiespectral extends Equipo implements Accionable, Registra
     @Override
     public String mostrarInformacion() {
         StringBuilder info = new StringBuilder();
-        info.append("=== CÁMARA MULTIESPECTRAL ===\n");
+        info.append("=== CAMARA MULTIESPECTRAL ===\n");
         info.append("ID: ").append(id).append("\n");
         info.append("Nombre: ").append(nombre).append("\n");
         info.append("Fabricante: ").append(fabricante).append("\n");

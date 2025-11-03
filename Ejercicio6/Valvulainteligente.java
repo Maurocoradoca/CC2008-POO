@@ -33,7 +33,7 @@ public class Valvulainteligente extends Equipo implements Accionable {
     @Override
     public String mostrarInformacion() {
         StringBuilder info = new StringBuilder();
-        info.append("=== VÁLVULA INTELIGENTE ===\n");
+        info.append("=== VaLVULA INTELIGENTE ===\n");
         info.append("ID: ").append(id).append("\n");
         info.append("Nombre: ").append(nombre).append("\n");
         info.append("Fabricante: ").append(fabricante).append("\n");
